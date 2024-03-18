@@ -1,8 +1,9 @@
-package models;
+package classes;
 
-public class Departement {
+public class Filiere {
 	private int id;
 	private String nom;
+	private int departement;
 	
 	public int getId() {
 		return id;
@@ -18,5 +19,13 @@ public class Departement {
 	
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	public int getDepartement() {
+		return departement;
+	}
+
+	public void setDepartement(int departement) {
+		this.departement = departement;
 	}
 }
