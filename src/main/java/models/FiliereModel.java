@@ -19,9 +19,8 @@ public class FiliereModel {
 			String sql = "INSERT INTO filiere(nom, departement) VALUES (?,?)";
 			PreparedStatement prepared = connection.prepareStatement(sql);
 			prepared.setString(1, filiere.getNom());
-			prepared.setInt(1, filiere.getDepartement());
+			prepared.setInt(2, filiere.getDepartement());
 			status = prepared.executeUpdate();
-			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -41,7 +40,6 @@ public class FiliereModel {
 				filiere.setDepartement(result.getInt(3));
 				filieres.add(filiere);
 			}
-			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

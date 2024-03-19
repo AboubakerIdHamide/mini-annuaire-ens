@@ -20,7 +20,6 @@ public class DepartementModel {
 			PreparedStatement prepared = connection.prepareStatement(sql);
 			prepared.setString(1, departement.getNom());
 			status = prepared.executeUpdate();
-			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -39,7 +38,6 @@ public class DepartementModel {
 				departement.setNom(result.getString(2));
 				departements.add(departement);
 			}
-			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -49,9 +47,9 @@ public class DepartementModel {
 	public static  List<Departement> search(String searchTerm) {
 		List<Departement> departements = new ArrayList<Departement>();
 		try {
-			String sql = "SELECT * FROM departement WHERE nom LIKE %?%";
+			String sql = "SELECT * FROM departement WHERE nom LIKE ?";
 			PreparedStatement prepared = connection.prepareStatement(sql);
-			prepared.setString(1, searchTerm);
+			prepared.setString(1, "%"+searchTerm+"%");
 			ResultSet result = prepared.executeQuery();
 			while(result.next()) {
 				Departement departement = new Departement();
@@ -59,7 +57,6 @@ public class DepartementModel {
 				departement.setNom(result.getString(2));
 				departements.add(departement);
 			}
-			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

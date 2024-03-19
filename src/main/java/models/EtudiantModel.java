@@ -23,9 +23,7 @@ public class EtudiantModel {
 			prepared.setInt(5, etudiant.getDepartement());
 			prepared.setInt(6, etudiant.getFiliere());
 			status = prepared.executeUpdate();
-			connection.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return status;
@@ -47,9 +45,7 @@ public class EtudiantModel {
 				etudiant.setFiliere(result.getInt(6));
 				etudiants.add(etudiant);
 			}
-			connection.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return etudiants;
@@ -58,11 +54,9 @@ public class EtudiantModel {
 	public static  List<Etudiant> search(String searchTerm) {
 		List<Etudiant> etudiants = new ArrayList<Etudiant>();
 		try {
-			String sql = "SELECT * FROM etudiant WHERE nom LIKE %?% OR prenom LIKE %?% OR telephone LIKE %?%";
+			String sql = "SELECT * FROM etudiant WHERE nom LIKE ?";
 			PreparedStatement prepared = connection.prepareStatement(sql);
-			prepared.setString(1, searchTerm);
-			prepared.setString(2, searchTerm);
-			prepared.setString(3, searchTerm);
+			prepared.setString(1, "%" + searchTerm + "%");
 			
 			ResultSet result = prepared.executeQuery();
 			while(result.next()) {
@@ -75,9 +69,7 @@ public class EtudiantModel {
 				etudiant.setFiliere(result.getInt(6));
 				etudiants.add(etudiant);
 			}
-			connection.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return etudiants;
