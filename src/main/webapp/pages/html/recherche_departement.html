@@ -7,7 +7,13 @@
   	<script src="https://cdn.tailwindcss.com"></script>
 	<title>Cherché Des Departement</title>
 </head>
-<body class="w-[100vw] h-[100vh] flex justify-center items-center bg-[#41C9E2]" >	
+<body class="w-[100vw] h-[100vh] flex justify-center items-center bg-[#41C9E2]" >
+	<a href="/mini-annuaire-ens" class="absolute top-[10px] left-[10px] cursor-pointer transition-all bg-white text-[#41C9E2] px-6 py-2 rounded-lg
+		border-white-600
+		border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
+		active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
+  		Home
+	</a>
 	<form class="min-w-[300px] max-w-md mx-auto" method="POST" action="search">   
 		<input type="hidden" name="type" value="departement" />
     	<label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Chercher</label>

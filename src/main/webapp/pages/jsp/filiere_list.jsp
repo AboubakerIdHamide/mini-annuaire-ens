@@ -12,6 +12,7 @@
 	<title>List Des Filieres</title>
 </head>
 <body class="w-[100vw] flex justify-center gap-[30px] flex-wrap bg-[#41C9E2] p-4 pt-[40px]" >
+		<%@ include file="../common/button.html" %>
         <%
 	       try{
         		List<Departement> departements = DepartementModel.all();
@@ -20,12 +21,12 @@
                		for(Departement departement: departements){
 				    	%>	
 						<div class="w-[270px] max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-4">
-						    <div class="flex items-center justify-between mb-4">
+						    <div class="flex items-center justify-center mb-4">
 						        <h5 class="text-xl font-bold leading-none text-gray-900">
 						        	<%=departement.getNom()%>
 						        </h5>
 						   </div>
-						   <div class="flow-root">
+						   <div class="flow-root flex items-center justify-center">
 						        <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
 								<%
 									for(Filiere filiere: filieres){

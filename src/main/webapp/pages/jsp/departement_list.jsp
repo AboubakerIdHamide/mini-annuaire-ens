@@ -12,7 +12,8 @@
 	<title>List Des Departements</title>
 </head>
 <body class="w-[100vw] flex justify-center bg-[#41C9E2] p-4 pt-[40px]" >
-	<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+	<%@ include file="../common/button.html" %>
+	<div class="relative overflow-x-auto shadow-md sm:rounded-lg min-w-[400px]">
 	    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
 	        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 	            <tr>

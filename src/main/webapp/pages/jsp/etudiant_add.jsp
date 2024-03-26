@@ -12,7 +12,8 @@
   	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="w-[100vw] h-[100vh] flex justify-center items-center bg-[#41C9E2]" >
-	<form action="etudiant" method="POST" class="p-4 rounded-lg bg-white">
+	<%@ include file="../common/button.html" %>
+	<form action="etudiant" method="POST" class="p-4 rounded-lg bg-white min-w-[400px]">
         <div class="mb-2">
             <label for="cne" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CNE</label>
             <input type="text" name="cne" placeholder="CNE" id="cne" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
