@@ -11,7 +11,7 @@
   	<script src="https://cdn.tailwindcss.com"></script>
 	<title>List Des Filieres</title>
 </head>
-<body class="w-[100vw] flex justify-center gap-[30px] flex-wrap bg-[#41C9E2] p-4 pt-[40px]" >
+<body class="w-[100vw] flex justify-start gap-[30px] flex-wrap bg-[#41C9E2] p-4 pt-[40px]" >
 		<%@ include file="../common/button.html" %>
         <%
 	       try{
@@ -20,7 +20,7 @@
         		if(!departements.isEmpty()){
                		for(Departement departement: departements){
 				    	%>	
-						<div class="w-[270px] max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-4">
+						<div class="w-[270px] max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-4 flex flex-col items-center">
 						    <div class="flex items-center justify-center mb-4">
 						        <h5 class="text-xl font-bold leading-none text-gray-900">
 						        	<%=departement.getNom()%>

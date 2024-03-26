@@ -9,7 +9,7 @@
   	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="w-[100vw] h-[100vh] flex justify-center items-center bg-[#41C9E2]" >
-	<div class="p-4 md:w-[40vw] md:min-h-[30vh] flex flex-col md:flex-row justify-center gap-[30px] bg-[#F7EEDD] rounded-lg">
+	<div class="p-4 md:w-[40vw] md:min-h-[30vh] flex flex-col md:flex-row justify-center gap-[30px] bg-[#FFFFFF] rounded-lg">
 		<div>
 			<h2 class="mb-2 text-lg font-semibold text-[#008DDA]">Menu utilisation :</h2>
 			<ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
