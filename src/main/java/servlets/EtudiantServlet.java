@@ -48,6 +48,7 @@ public class EtudiantServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		try {
 			Etudiant newEtudiant = new Etudiant();
 			newEtudiant.setCNE(Integer.parseInt(request.getParameter("cne")));
@@ -58,7 +59,6 @@ public class EtudiantServlet extends HttpServlet {
 			newEtudiant.setFiliere(Integer.parseInt(request.getParameter("filiere")));
 			
 			int res = EtudiantModel.save(newEtudiant);
-			HttpSession session = request.getSession();
 			
 			if(res > 0) {
 				session.setAttribute("msg_type", "success");
@@ -67,10 +67,11 @@ public class EtudiantServlet extends HttpServlet {
 				session.setAttribute("msg_type", "error");
 				session.setAttribute("msg_content", "Error lors l'insertion d'etudiant");
 			}
-			request.getRequestDispatcher("pages/common/alert.jsp").include(request, response);	
 		} catch (Exception e) {
-			request.getRequestDispatcher("pages/common/error404.html").include(request, response);
+			session.setAttribute("msg_type", "error");
+			session.setAttribute("msg_content", "Valeur Invalide (" + e.getLocalizedMessage() + ")");
         }
+		request.getRequestDispatcher("pages/common/alert.jsp").include(request, response);
 	}
 
 }
